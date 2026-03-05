@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* Koyu Tema Renkleri */
+  --color-dark-bg: #1B262C;
+  --color-dark-card: #212E36;
+  --color-dark-accent: #3282B8;
+  --color-dark-text-1: #F0F6FC;
+  --color-dark-text-2: #B3B3B3;
+  --color-dark-border: #30363D;
+
+  /* Açık Tema Renkleri */
+  --color-light-bg: #F8FAFC;
+  --color-light-card: #FFFFFF;
+  --color-light-accent: #0F4C75;
+  --color-light-text-1: #1B262C;
+  --color-light-text-2: #57606A;
+  --color-light-border: #E1E4E8;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
