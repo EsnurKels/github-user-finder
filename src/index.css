@@ -25,3 +25,17 @@
     @apply transition-colors duration-300;
   }
 }
+
+/* Scrollbar tasarımı */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3282B8; /* Senin seçtiğin vurgu rengi */
+  border-radius: 10px;
+}
