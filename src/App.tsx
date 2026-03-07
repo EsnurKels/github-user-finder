@@ -19,7 +19,6 @@ function App() {
   const searchUser = async (username: string) => {
     setError(null);
     try {
-      // Servis üzerinden verileri paralel olarak çekelim (daha hızlı olur)
       const [uData, rData] = await Promise.all([
         githubService.getUser(username),
         githubService.getRepos(username)
