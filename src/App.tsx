@@ -1,27 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FaGithub, FaSun, FaMoon } from 'react-icons/fa'
 import { MdClear } from 'react-icons/md'
-
-// --- Tipler (Types) ---
-interface GitHubUser {
-  login: string;
-  avatar_url: string;
-  name: string;
-  bio: string;
-  public_repos: number;
-  followers: number;
-  following: number;
-  html_url: string;
-}
-
-interface GitHubRepo {
-  id: number;
-  name: string;
-  description: string;
-  language: string;
-  html_url: string;
-}
-
+import type { GitHubRepo, GitHubUser } from '../src/types/github'
 function App() {
   const [username, setUsername] = useState('')
   const [userData, setUserData] = useState<GitHubUser | null>(null)
