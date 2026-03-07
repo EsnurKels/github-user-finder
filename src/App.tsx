@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { FaGithub, FaSun, FaMoon } from 'react-icons/fa'
 import { MdClear } from 'react-icons/md'
 import type { GitHubRepo, GitHubUser } from '../src/types/github'
+import { Navbar } from '../src/components/Navbar'
+
 function App() {
   const [username, setUsername] = useState('')
   const [userData, setUserData] = useState<GitHubUser | null>(null)
@@ -66,25 +68,7 @@ function App() {
     <div className="h-screen overflow-hidden bg-light-bg dark:bg-dark-bg text-light-text-1 dark:text-dark-text-1 transition-colors duration-500 flex flex-col font-sans">
       
       {/* NAVBAR */}
-      <nav className="w-full py-4 px-6 border-b border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card flex justify-between items-center z-50 shadow-sm">
-        <div className="flex items-center gap-2">
-          <FaGithub className="text-3xl text-light-accent dark:text-dark-accent" />
-          <span className="text-xl font-bold tracking-tight hidden sm:block">GitHub User Finder</span>
-        </div>
-
-        <button 
-          onClick={() => setDarkMode(!darkMode)}
-          className="relative w-14 h-7 flex items-center bg-slate-300 dark:bg-dark-accent rounded-full p-1 cursor-pointer transition-colors duration-300"
-        >
-          <div className={`absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center z-10 ${darkMode ? 'translate-x-7' : 'translate-x-0'}`}>
-            {darkMode ? <FaMoon className="text-[10px] text-dark-accent" /> : <FaSun className="text-[10px] text-yellow-500" />}
-          </div>
-          <div className="flex justify-between w-full px-1">
-             <FaSun className="text-xs text-yellow-500" />
-             <FaMoon className="text-xs text-white" />
-          </div>
-        </button>
-      </nav>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
 
       {/* ANA İÇERİK */}
       <main className="flex-1 flex flex-col items-center py-6 px-4 max-w-7xl mx-auto w-full overflow-hidden">
